@@ -37,7 +37,7 @@ console.log("problem 12", hasAnyThisChoirs([["la", "la"], ["so", "mi"], ["so", "
 
 // ### **13. Vegetable Crate Totals** Find the sum of all weights.
 
-console.log("Problem 13",totalSum([[4, 6], [2, 3, 1], [5]]));
+console.log("Problem 13", totalSum([[4, 6], [2, 3, 1], [5]]));
 
 // ### **14. Post Office Parcel Record** Find unique parcel sizes.
 
@@ -68,7 +68,7 @@ console.log(countDear(["deer", "deer", "rabbit", "deer"]));
 
 // Find all chapters completed by any group.
 
-console.log("Problem 16",findUniqueElement([[1, 2], [3], [2, 4, 1]]));
+console.log("Problem 16", findUniqueElement([[1, 2], [3], [2, 4, 1]]));
 
 // ### **17. Dance Class Steps**
 
@@ -81,7 +81,7 @@ console.log("Problem 16",findUniqueElement([[1, 2], [3], [2, 4, 1]]));
 
 // Check if `"turn"` appears in any sequence.
 
-console.log("Problem 17", containsInAny([["step", "tap"],["turn", "step"]], "turn"));
+console.log("Problem 17", containsInAny([["step", "tap"], ["turn", "step"]], "turn"));
 
 // ### **18. Garden Watering Amount**
 
@@ -94,6 +94,8 @@ console.log("Problem 17", containsInAny([["step", "tap"],["turn", "step"]], "tur
 // ```
 
 // Total amount of water used.
+
+console.log("Problem 18", totalSum([[1, 2, 1], [3], [2]]));
 
 // ### **19. Paper Crane Making**
 
