@@ -3,15 +3,15 @@ const findUniqueElement = (inputArray) => {
     return flatArray.filter((value, index) => flatArray.indexOf(value) === index);
 }
 
-const containsInAny = (inputArray, value) => {
-    return inputArray.some(arr => arr.includes(value));
-}
+const containsInAny = (inputArray, value) =>
+    inputArray.some(arr => arr.includes(value));
 
 const totalSum = (inputArray) => {
     return inputArray.flat().reduce((total, value) => total + value, 0);
 }
 
-
+const countOccurrences = (array, item) =>
+    array.reduce((count, value) => (value === item ? count + 1 : count), 0);
 
 // 11. Produce a list of distinct ingredients.
 
@@ -57,56 +57,23 @@ const countDear = (inputArray) =>
 
 console.log(countDear(["deer", "deer", "rabbit", "deer"]));
 
-
-// ### **16. Study Group Completion**
-// Study groups finish chapters:
-// ```
-// [1, 2]
-// [3]
-// [2, 4, 1]
-// ```
-// Find all chapters completed by any group.
+// ### **16. Study Group Completion** Find all chapters completed by any group.
 
 console.log("Problem 16", findUniqueElement([[1, 2], [3], [2, 4, 1]]));
 
-// ### **17. Dance Class Steps**
-// Step sequences:
-// ```
-// ["step", "tap"]
-// ["turn", "step"]
-// ```
-// Check if `"turn"` appears in any sequence.
+// ### **17. Dance Class Steps** Check if `"turn"` appears in any sequence.
 
 console.log("Problem 17", containsInAny([["step", "tap"], ["turn", "step"]], "turn"));
 
-// ### **18. Garden Watering Amount**
-// Water used:
-// [1, 2, 1]
-// [3]
-// [2]
-// Total amount of water used.
+// ### **18. Garden Watering Amount** Total amount of water used.
 
 console.log("Problem 18", totalSum([[1, 2, 1], [3], [2]]));
 
-// ### **19. Paper Crane Making**
-// Origami students make cranes in sessions:
-// ```
-// [3, 2]
-// [1]
-// [4]
-// ```
-// Compute the total cranes.
+// ### **19. Paper Crane Making** Compute the total cranes.
 
 console.log("Problem 19", totalSum([[3, 2], [1], [4]]));
 
-// ### **20. Fruit Basket Inventory**
-// Mixed fruits recorded:
-// ```
-// ["apple", "banana"]
-// ["apple"]
-// ["apple", "orange"]
-// ```
-// List unique fruits used.
+// ### **20. Fruit Basket Inventory** List unique fruits used.
 
 console.log("Problem 20", findUniqueElement([["apple", "banana"], ["apple"], ["apple", "orange"]]));
 
@@ -114,33 +81,26 @@ console.log("Problem 20", findUniqueElement([["apple", "banana"], ["apple"], ["a
 
 const totalPenHandedOut = (inputArray) => totalSum(inputArray);
 
-console.log("Problem 21", totalPenHandedOut([[2,3], [1], [3, 2]]));
+console.log("Problem 21", totalPenHandedOut([[2, 3], [1], [3, 2]]));
 
 // ### **22. Movie Marathon Titles** List unique titles watched.
 
-const watchedMovies =[["Inception", "Dunkirk"],["Interstellar"],["Inception"]]
+const watchedMovies = [["Inception", "Dunkirk"], ["Interstellar"], ["Inception"]]
 const findUniqueMovieWatched = inputArray => findUniqueElement(inputArray);
 console.log("Problem 22", findUniqueMovieWatched(watchedMovies));
 
 
-// ### **23. Name Badge Sorting**
-// Students sign in repeatedly:
-// ```
-// ["A", "B", "A", "C", "B"]
-// ```
-// Create a unique list of attendees.
+// ### **23. Name Badge Sorting** Create a unique list of attendees.
 
-// ### **24. Ice Cream Orders**
+const studentsSign = ["A", "B", "A", "C", "B"];
+const uniqueSigns = inputArray => findUniqueElement(inputArray);
+console.log("Problem 23", uniqueSigns(studentsSign));
 
-// Orders recorded:
+// ### **24. Ice Cream Orders** Find how many orders were `"chocolate"`.
 
-// ```
-// ["vanilla", "chocolate"]
-// ["strawberry"]
-// ["chocolate"]
-// ```
-
-// Find how many orders were `"chocolate"`.
+const recorderOrders = [["vanilla", "chocolate"], ["strawberry"], ["chocolate"]]
+const chocolateOcurances = (inputArray, item) => countOccurrences(inputArray.flat(), item);
+console.log(chocolateOcurances(recorderOrders, "chocolate"));
 
 // ### **25. Flowers in Bouquets**
 
