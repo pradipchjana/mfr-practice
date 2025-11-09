@@ -7,7 +7,7 @@ const findListOfDistinctIngredients = (inputArray) => {
 
 console.log(findListOfDistinctIngredients([["rice", "lentils"], ["rice"], ["curd", "lentils"]]));
 
-// Singers produce sequences: Check whether any group sang `"so"`.
+// 12 Singers produce sequences: Check whether any group sang `"so"`.
 
 const hasAnyThisChoirs = (inputArray, choirName) => {
     return inputArray.some((choir) => choir.includes(choirName));
@@ -15,27 +15,27 @@ const hasAnyThisChoirs = (inputArray, choirName) => {
 
 console.log(hasAnyThisChoirs([["mi", "fa", "la"], ["do", "mi"], ["fa"]], "so"));
 console.log(hasAnyThisChoirs([["la", "la"], ["so", "mi"], ["so", "mi", "la"]], "so"));
-// ### **13. Vegetable Crate Totals**
 
-// Crate weights:
+// ### **13. Vegetable Crate Totals** Find the sum of all weights.
 
-// ```
-// [4, 6]
-// [2, 3, 1]
-// [5]
-// ```
+const totalCrateWeights = (inputArray) => {
+    const flatArray = inputArray.flat()
+    return flatArray.reduce((total, value) => total + value, 0);
+}
 
-// Find the sum of all weights.
+console.log(totalCrateWeights([[4, 6], [2, 3, 1], [5]]));
 
 // ### **14. Post Office Parcel Record**
-
-// Parcel sizes logged:
-
-// ```
 // ["small", "large", "medium", "small"]
 // ```
 
 // Find unique parcel sizes.
+
+const findUniqueParcelSize = (array) => {
+    return array.filter((element, index) => array.indexOf(element) === index);
+}
+
+console.log(findUniqueParcelSize(["small", "large", "medium", "small"]));
 
 // ### **15. Wildlife Sighting Count**
 
