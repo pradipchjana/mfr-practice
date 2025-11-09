@@ -84,30 +84,25 @@ console.log("Problem 16", findUniqueElement([[1, 2], [3], [2, 4, 1]]));
 console.log("Problem 17", containsInAny([["step", "tap"], ["turn", "step"]], "turn"));
 
 // ### **18. Garden Watering Amount**
-
 // Water used:
-
-// ```
 // [1, 2, 1]
 // [3]
 // [2]
-// ```
-
 // Total amount of water used.
 
 console.log("Problem 18", totalSum([[1, 2, 1], [3], [2]]));
 
 // ### **19. Paper Crane Making**
-
 // Origami students make cranes in sessions:
-
 // ```
 // [3, 2]
 // [1]
 // [4]
 // ```
-
 // Compute the total cranes.
+
+console.log("Problem 19", totalSum([[3, 2], [1], [4]]));
+
 
 // ### **20. Fruit Basket Inventory**
 
