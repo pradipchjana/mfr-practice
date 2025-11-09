@@ -11,6 +11,8 @@ const totalSum = (inputArray) => {
     return inputArray.flat().reduce((total, value) => total + value, 0);
 }
 
+
+
 // 11. Produce a list of distinct ingredients.
 
 const findListOfDistinctIngredients = (inputArray) => {
@@ -18,7 +20,7 @@ const findListOfDistinctIngredients = (inputArray) => {
 }
 
 console.log(
-    "findListOfDistinctIngredients",
+    "Problem 11",
     findListOfDistinctIngredients(
         [["rice", "lentils"],
         ["rice"],
@@ -57,28 +59,22 @@ console.log(countDear(["deer", "deer", "rabbit", "deer"]));
 
 
 // ### **16. Study Group Completion**
-
 // Study groups finish chapters:
-
 // ```
 // [1, 2]
 // [3]
 // [2, 4, 1]
 // ```
-
 // Find all chapters completed by any group.
 
 console.log("Problem 16", findUniqueElement([[1, 2], [3], [2, 4, 1]]));
 
 // ### **17. Dance Class Steps**
-
 // Step sequences:
-
 // ```
 // ["step", "tap"]
 // ["turn", "step"]
 // ```
-
 // Check if `"turn"` appears in any sequence.
 
 console.log("Problem 17", containsInAny([["step", "tap"], ["turn", "step"]], "turn"));
@@ -114,39 +110,24 @@ console.log("Problem 19", totalSum([[3, 2], [1], [4]]));
 
 console.log("Problem 20", findUniqueElement([["apple", "banana"], ["apple"], ["apple", "orange"]]));
 
+// ### **21. Classroom Pen Distribution** Total pens handed out.
 
-// ### **21. Classroom Pen Distribution**
+const totalPenHandedOut = (inputArray) => totalSum(inputArray);
 
-// Pens given:
+console.log("Problem 21", totalPenHandedOut([[2,3], [1], [3, 2]]));
 
-// ```
-// [2, 3]
-// [1]
-// [3, 2]
-// ```
+// ### **22. Movie Marathon Titles** List unique titles watched.
 
-// Total pens handed out.
+const watchedMovies =[["Inception", "Dunkirk"],["Interstellar"],["Inception"]]
+const findUniqueMovieWatched = inputArray => findUniqueElement(inputArray);
+console.log("Problem 22", findUniqueMovieWatched(watchedMovies));
 
-// ### **22. Movie Marathon Titles**
-
-// Movies watched:
-
-// ```
-// ["Inception", "Dunkirk"]
-// ["Interstellar"]
-// ["Inception"]
-// ```
-
-// List unique titles watched.
 
 // ### **23. Name Badge Sorting**
-
 // Students sign in repeatedly:
-
 // ```
 // ["A", "B", "A", "C", "B"]
 // ```
-
 // Create a unique list of attendees.
 
 // ### **24. Ice Cream Orders**
