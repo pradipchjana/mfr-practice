@@ -1,288 +1,231 @@
-const findUniqueElement = (inputArray) => {
-    const flatArray = inputArray.flat();
-    return flatArray.filter((value, index) => flatArray.indexOf(value) === index);
-}
+const findUniqueElements = (inputArray) => {
+  const flatArray = inputArray.flat();
+  return flatArray.filter((value, index) => flatArray.indexOf(value) === index);
+};
 
 const containsInAny = (inputArray, value) =>
-    inputArray.some(arr => arr.includes(value));
+  inputArray.some(arr => arr.includes(value));
 
-const totalSum = (inputArray) => {
-    return inputArray.flat().reduce((total, value) => total + value, 0);
-}
+const totalSum = (inputArray) =>
+  inputArray.flat().reduce((total, value) => total + value, 0);
 
 const countOccurrences = (array, item) =>
-    array.reduce((count, value) => (value === item ? count + 1 : count), 0);
+  array.reduce((count, value) => (value === item ? count + 1 : count), 0);
 
-// 11. Produce a list of distinct ingredients.
+const isAllPosivite = inputArray => inputArray.flat().every(x => x > 0);
 
-const findListOfDistinctIngredients = (inputArray) => {
-    return findUniqueElement(inputArray);
-}
-
-console.log(
-    "Problem 11",
-    findListOfDistinctIngredients(
-        [["rice", "lentils"],
-        ["rice"],
-        ["curd", "lentils"]]
-    )
-);
-
-// 12 Singers produce sequences: Check whether any group sang `"so"`.
-
-const hasAnyThisChoirs = (inputArray, choirName) => {
-    return containsInAny(inputArray, choirName);
-}
-
-console.log("problem 12", hasAnyThisChoirs([["mi", "fa", "la"], ["do", "mi"], ["fa"]], "so"));
-console.log("problem 12", hasAnyThisChoirs([["la", "la"], ["so", "mi"], ["so", "mi", "la"]], "so"));
-
-// ### **13. Vegetable Crate Totals** Find the sum of all weights.
-
-console.log("Problem 13", totalSum([[4, 6], [2, 3, 1], [5]]));
-
-// ### **14. Post Office Parcel Record** Find unique parcel sizes.
-
-const findUniqueParcelSize = (array) => {
-    return array.filter((element, index) => array.indexOf(element) === index);
-}
-
-console.log(findUniqueParcelSize(["small", "large", "medium", "small"]));
-
-// ### **15. Wildlife Sighting Count**
-// Count how many times “deer” was seen.
-
-const countDear = (inputArray) =>
-    inputArray.reduce((count, value) => (value === "deer" ? count + 1 : count), 0);
-
-console.log(countDear(["deer", "deer", "rabbit", "deer"]));
-
-// ### **16. Study Group Completion** Find all chapters completed by any group.
-
-console.log("Problem 16", findUniqueElement([[1, 2], [3], [2, 4, 1]]));
-
-// ### **17. Dance Class Steps** Check if `"turn"` appears in any sequence.
-
-console.log("Problem 17", containsInAny([["step", "tap"], ["turn", "step"]], "turn"));
-
-// ### **18. Garden Watering Amount** Total amount of water used.
-
-console.log("Problem 18", totalSum([[1, 2, 1], [3], [2]]));
-
-// ### **19. Paper Crane Making** Compute the total cranes.
-
-console.log("Problem 19", totalSum([[3, 2], [1], [4]]));
-
-// ### **20. Fruit Basket Inventory** List unique fruits used.
-
-console.log("Problem 20", findUniqueElement([["apple", "banana"], ["apple"], ["apple", "orange"]]));
-
-// ### **21. Classroom Pen Distribution** Total pens handed out.
-
-const totalPenHandedOut = (inputArray) => totalSum(inputArray);
-
-console.log("Problem 21", totalPenHandedOut([[2, 3], [1], [3, 2]]));
-
-// ### **22. Movie Marathon Titles** List unique titles watched.
-
-const watchedMovies = [["Inception", "Dunkirk"], ["Interstellar"], ["Inception"]]
-const findUniqueMovieWatched = inputArray => findUniqueElement(inputArray);
-console.log("Problem 22", findUniqueMovieWatched(watchedMovies));
-
-
-// ### **23. Name Badge Sorting** Create a unique list of attendees.
-
-const studentsSign = ["A", "B", "A", "C", "B"];
-const uniqueSigns = inputArray => findUniqueElement(inputArray);
-console.log("Problem 23", uniqueSigns(studentsSign));
-
-// ### **24. Ice Cream Orders** Find how many orders were `"chocolate"`.
-
-const recorderOrders = [["vanilla", "chocolate"], ["strawberry"], ["chocolate"]]
-const chocolateOcurances = (inputArray, item) => countOccurrences(inputArray.flat(), item);
-console.log(chocolateOcurances(recorderOrders, "chocolate"));
-
-// ### **25. Flowers in Bouquets** List all unique flowers used.
-
-const bouquets = [["rose", "lily"], ["lily", "tulip"]];
-const listUniqueFlowers = inputArray => findUniqueElement(inputArray);
-console.log("Problem 25", listUniqueFlowers(bouquets));
-
-// ### **26. Morning Exercise Count Total repetitions done.
-
-const repetitions = [[10, 20], [5], [15, 10]];
-const totalRepetitions = inputArray => totalSum(inputArray);
-console.log("Problem 26", totalRepetitions(repetitions));
-
-// ### **27. Train Station Announcements** Find the station names without repeats.
-
-const announcedStations = [["A", "B"], ["B", "C"], ["A"]];
-const findUniqueStations = inputArray => findUniqueElement(inputArray);
-console.log("Problem 27", findUniqueStations(announcedStations));
-
-// ### **28. Book Club Pages Read** Find total pages read.
-
-const readPages = [[12, 10], [5], [8, 7]];
-const findTotalPagesRead = inputArray => totalSum(inputArray);
-console.log("Problem 28", findTotalPagesRead(readPages));
-
-// ### **29. Rainfall Data Check** Check if all values are positive.
-
-const measurements = [[3, 4], [5, 2], [1]];
-const isAllPositive = inputArray => inputArray.flat().every(x => x > 0);
-console.log("Problem 29", isAllPositive(measurements));
-
-// ### **30. Fruit Stand Weight Totals** Compute total weight.
-
-const weights = [[4, 3], [2], [3, 1]];
-const totalweight = inputArray => totalSum(inputArray);
-console.log("Problem 30", totalweight(weights));
-
-// ### **31. School Snack List** Unique snacks served.
-
-const snacks = [["idli", "vada"], ["vada", "upma"]];
-const uniqueSnacks = inputArray => findUniqueElement(inputArray);
-console.log("Problem 31", uniqueSnacks(snacks));
-
-// ### **32. Photo Contest Entries** List unique themes.
-
-const themes = [["sunset", "bird"], ["river"], ["sunset"]];
-console.log("Problems 32", findUniqueElement(themes));
-
-// ### **33. Electricity Reading Validation** Check if all readings are below 120.
-
-const readings = [[110, 115], [118], [109]];
 const isAllBellow120 = inputArray => inputArray.flat().every(x => x < 120);
-console.log("Problem 33", isAllBellow120(readings));
 
-// ### **34. Jogging Lap Count** Compute total laps.
+const isAnyAbove7 = inputArray => inputArray.flat().some(x => x > 7);
 
-const laps = [[2, 3, 2], [1], [4]];
-const totalLaps = inputArray => totalSum(inputArray);
-console.log("Problem 34", totalLaps(laps));
+const isAnyEqualTo4 = inputArray => inputArray.flat().some(x => x === 4);
 
-// ### **35. Music Playlist Repeats** Count occurrences of `"track1"`.
+const main = function () {
 
-const playedSongs = ["track1", "track2", "track1"];
-console.log("Problem 35", countOccurrences(playedSongs, "track1"));
+    console.log("Problem 11", findUniqueElements([
+      ["rice", "lentils"],
+      ["rice"],
+      ["curd", "lentils"]
+    ]));
+    
+    console.log("Problem 12", containsInAny([
+      ["mi", "fa", "la"],
+      ["do", "mi"],
+      ["fa"]
+    ], "so"));
+    
+    console.log("Problem 13", totalSum([
+      [4, 6],
+      [2, 3, 1],
+      [5]
+    ]));
+    
+    console.log("Problem 14", findUniqueElements([
+      ["small", "large", "medium", "small"]
+    ]));
+    
+    console.log("Problem 15", countOccurrences(
+      ["deer", "deer", "rabbit", "deer"], "deer"
+    ));
+    
+    console.log("Problem 16", findUniqueElements([
+      [1, 2],
+      [3],
+      [2, 4, 1]
+    ]));
+    
+    console.log("Problem 17", containsInAny([
+      ["step", "tap"],
+      ["turn", "step"]
+    ], "turn"));
+    
+    console.log("Problem 18", totalSum([
+      [1, 2, 1],
+      [3],
+      [2]
+    ]));
+    
+    console.log("Problem 19", totalSum([
+      [3, 2],
+      [1],
+      [4]
+    ]));
+    
+    console.log("Problem 20", findUniqueElements([
+      ["apple", "banana"],
+      ["apple"],
+      ["apple", "orange"]
+    ]));
+    
+    console.log("Problem 21", totalSum([
+      [2, 3],
+      [1],
+      [3, 2]
+    ]));
+    
+    console.log("Problem 22", findUniqueElements([
+      ["Inception", "Dunkirk"],
+      ["Interstellar"],
+      ["Inception"]
+    ]));
+    
+    console.log("Problem 23", findUniqueElements([
+      ["A", "B", "A", "C", "B"]
+    ]));
+    
+    console.log("Problem 24", countOccurrences(
+      [["vanilla", "chocolate"], ["strawberry"], ["chocolate"]].flat(),
+      "chocolate"
+    ));
+    
+    console.log("Problem 25", findUniqueElements([
+      ["rose", "lily"],
+      ["lily", "tulip"]
+    ]));
+    
+    console.log("Problem 26", totalSum([
+      [10, 20],
+      [5],
+      [15, 10]
+    ]));
+    
+    console.log("Problem 27", findUniqueElements([
+      ["A", "B"],
+      ["B", "C"],
+      ["A"]
+    ]));
+    
+    console.log("Problem 28", totalSum([
+      [12, 10],
+      [5],
+      [8, 7]
+    ]));
+    
+    console.log("Problem 29", isAllPosivite([[3, 4], [5, 2], [1]]));
+    
+    console.log("Problem 30", totalSum([
+      [4, 3],
+      [2],
+      [3, 1]
+    ]));
+    
+    console.log("Problem 31", findUniqueElements([
+      ["idli", "vada"],
+      ["vada", "upma"]
+    ]));
+    
+    console.log("Problem 32", findUniqueElements([
+      ["sunset", "bird"],
+      ["river"],
+      ["sunset"]
+    ]));
+    
+    console.log("Problem 33", isAllBellow120([[110, 115], [118], [109]]));
+    
+    console.log("Problem 34", totalSum([
+      [2, 3, 2],
+      [1],
+      [4]
+    ]));
+    
+    console.log("Problem 35", countOccurrences(
+      ["track1", "track2", "track1"],
+      "track1"
+    ));
+    
+    console.log("Problem 36", findUniqueElements([
+      ["chess", "bread"],
+      ["tomato"],
+      ["bread"]
+    ]));
+    
+    console.log("Problem 37", findUniqueElements([
+      ["sky", "blue"],
+      ["night"],
+      ["sky", "dark"]
+    ]));
+    
+    console.log("Problem 38", findUniqueElements([
+      ["toy", "sticker"],
+      ["candy", "sticker"]
+    ]));
+    
+    console.log("Problem 39", totalSum([
+      [6, 4],
+      [3, 2]
+    ]));
+    
+    console.log("Problem 40", isAnyAbove7([[5, 6], [7], [6]]));
+    
+    console.log("Problem 41", totalSum([
+      [1, 2, 3],
+      [2]
+    ]));
+    
+    console.log("Problem 42", findUniqueElements([
+      ["Tom", "Jerry"],
+      ["Jerry", "Spike"]
+    ]));
+    
+    console.log("Problem 43", findUniqueElements([
+      ["Vega", "Sirius"],
+      ["Vega", "Rigel"]
+    ]));
+    
+    console.log("Problem 44", totalSum([
+      [10, 12],
+      [15]
+    ]));
+    
+    console.log("Problem 45", totalSum([
+      [3, 5],
+      [2, 1]
+    ]));
+    
+    console.log("Problem 46", findUniqueElements([
+      ["mint", "ginger"],
+      ["lemon"],
+      ["mint"]
+    ]));
+    
+    console.log("Problem 47", isAnyEqualTo4([[2, 3], [1], [4, 2]]));
+    
+    console.log("Problem 48", findUniqueElements([
+      ["pencil", "charcoal"],
+      ["ink"],
+      ["pencil"]
+    ]));
+    
+    console.log("Problem 49", totalSum([
+      [1, 1, 2],
+      [2, 1]
+    ]));
+    
+    console.log("Problem 50", findUniqueElements([
+      ["salt", "pepper"],
+      ["turmeric"],
+      ["salt"]
+    ]));
+}
 
-// ### **36. Café Order Ingredients** Unique ingredients needed.
-
-const ingredients = [["chess", "bread"], ["tomato"], ["bread"]];
-const findUniqueIngredients = inputArray => findUniqueElement(inputArray);
-console.log("Problem 36", findUniqueIngredients(ingredients));
-
-// ### **37. Student Poetry Words** List all unique words.
-
-const wordLists = [["sky", "blue"], ["night"], ["sky", "dark"]];
-console.log("Problem 37", findUniqueElement(wordLists));
-
-// ### **38. Gift Box Items** List unique items used.
-
-const items = [["toy", "sticker"], ["candy", "sticker"]];
-console.log("Problem 38", findUniqueElement(items));
-
-// ### **39. Gym Routine Count**
-
-// Routine counts:
-// ```
-// [6, 4]
-// [3, 2]
-// ```
-// Total counts.
-
-const routineCount = [[6, 4], [3, 2]];
-console.log("Problem 39", totalSum(routineCount));
-
-// ### **40. Fish Tank Measurements**
-// Measurements:
-// ```
-// [5, 6]
-// [7]
-// [6]
-// ```
-// Check if any measurement is above 7.
-
-// ### **41. Candy Distribution**
-// Candy numbers:
-// ```
-// [1, 2, 3]
-// [2]
-// ```
-// Sum all candies.
-
-// ### **42. Workshop Attendance**
-// Participants:
-// ```
-// ["Tom", "Jerry"]
-// ["Jerry", "Spike"]
-// ```
-// List unique participants.
-
-// ### **43. Space Camp Star Names**
-// Stars named:
-// ```
-// ["Vega", "Sirius"]
-// ["Vega", "Rigel"]
-// ```
-// Unique star names.
-
-// ### **44. Train Car Passenger Check**
-// Counts:
-// ```
-// [10, 12]
-// [15]
-// ```
-// Total passengers.
-
-// ### **45. Weekly Grocery Tally**
-// Quantities:
-// ```
-// [3, 5]
-// [2, 1]
-// ```
-// Find the total.
-
-// ### **46. Tea Tasting Flavors**
-// Flavors:
-// ```
-// ["mint", "ginger"]
-// ["lemon"]
-// ["mint"]
-// ```
-// Unique flavors.
-
-// ### **47. Photography Exposure Values**
-// Values:
-// ```
-// [2, 3]
-// [1]
-// [4, 2]
-// ```
-// Check if any value equals 4.
-
-// ### **48. Drawing Class Tools**
-// Tools:
-// ```
-// ["pencil", "charcoal"]
-// ["ink"]
-// ["pencil"]
-// ```
-// Unique tools used.
-
-// ### **49. Coin Collection Tally**
-// Coins collected:
-// ```
-// [1, 1, 2]
-// [2, 1]
-// ```
-// Total coins.
-
-// ### **50. Cooking Class Spices**
-// Spices:
-// ```
-// ["salt", "pepper"]
-// ["turmeric"]
-// ["salt"]
-// ```
-// Unique spices.
+main();
