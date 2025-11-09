@@ -8,10 +8,10 @@
 
 // Check whether **any** group sang `"do"`.
 
-const hasAnyDOChoirs = (inputArray) => {
-    return inputArray.some((choir) => choir.includes("do"));
+const hasAnyThisChoirs = (inputArray, choirName) => {
+    return inputArray.some((choir) => choir.includes(choirName));
 }
 
-console.log(hasAnyDOChoirs([["mi", "fa", "so"], ["do", "mi"], ["fa"]]));
-console.log(hasAnyDOChoirs(["mi", "fa"], ["so", "mi"], ["so", "mi", "fa"]));
+console.log(hasAnyThisChoirs([["mi", "fa", "so"], ["do", "mi"], ["fa"]], "do"));
+console.log(hasAnyThisChoirs([["mi", "fa"], ["so", "mi"], ["so", "mi", "fa"]], "do"));
 
