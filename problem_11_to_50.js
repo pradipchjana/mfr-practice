@@ -149,61 +149,39 @@ console.log("Problem 31", uniqueSnacks(snacks));
 const themes = [["sunset", "bird"], ["river"], ["sunset"]];
 console.log("Problems 32", findUniqueElement(themes));
 
-// ### **33. Electricity Reading Validation**
-// Readings:
-// ```
-// [110, 115]
-// [118]
-// [109]
-// ```
-// Check if all readings are below 120.
+// ### **33. Electricity Reading Validation** Check if all readings are below 120.
 
 const readings = [[110, 115], [118], [109]];
 const isAllBellow120 = inputArray => inputArray.flat().every(x => x < 120);
 console.log("Problem 33", isAllBellow120(readings));
 
+// ### **34. Jogging Lap Count** Compute total laps.
 
-// ### **34. Jogging Lap Count**
-// Laps:
-// ```
-// [2, 3, 2]
-// [1]
-// [4]
-// ```
-// Compute total laps.
+const laps = [[2, 3, 2], [1], [4]];
+const totalLaps = inputArray => totalSum(inputArray);
+console.log("Problem 34", totalLaps(laps));
 
-// ### **35. Music Playlist Repeats**
-// Songs played:
-// ```
-// ["track1", "track2", "track1"]
-// ```
-// Count occurrences of `"track1"`.
+// ### **35. Music Playlist Repeats** Count occurrences of `"track1"`.
 
-// ### **36. Café Order Ingredients**
-// Ingredients:
-// ```
-// ["cheese", "bread"]
-// ["tomato"]
-// ["bread"]
-// ```
-// Unique ingredients needed.
+const playedSongs = ["track1", "track2", "track1"];
+console.log("Problem 35", countOccurrences(playedSongs, "track1"));
 
-// ### **37. Student Poetry Words**
-// Word lists:
-// ```
-// ["sky", "blue"]
-// ["night"]
-// ["sky", "dark"]
-// ```
-// List all unique words.
+// ### **36. Café Order Ingredients** Unique ingredients needed.
 
-// ### **38. Gift Box Items**
-// Items:
-// ```
-// ["toy", "sticker"]
-// ["candy", "sticker"]
-// ```
-// List unique items used.
+const ingredients = [["chess", "bread"], ["tomato"], ["bread"]];
+const findUniqueIngredients = inputArray => findUniqueElement(inputArray);
+console.log("Problem 36", findUniqueIngredients(ingredients));
+
+// ### **37. Student Poetry Words** List all unique words.
+
+const wordLists = [["sky", "blue"], ["night"], ["sky", "dark"]];
+console.log("Problem 37", findUniqueElement(wordLists));
+
+// ### **38. Gift Box Items** List unique items used.
+
+const items = [["toy", "sticker"], ["candy", "sticker"]];
+console.log("Problem 38", findUniqueElement(items));
+
 // ### **39. Gym Routine Count**
 
 // Routine counts:
@@ -212,6 +190,9 @@ console.log("Problem 33", isAllBellow120(readings));
 // [3, 2]
 // ```
 // Total counts.
+
+const routineCount = [[6, 4], [3, 2]];
+console.log("Problem 39", totalSum(routineCount));
 
 // ### **40. Fish Tank Measurements**
 // Measurements:
