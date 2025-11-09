@@ -144,18 +144,11 @@ const snacks = [["idli", "vada"], ["vada", "upma"]];
 const uniqueSnacks = inputArray => findUniqueElement(inputArray);
 console.log("Problem 31", uniqueSnacks(snacks));
 
-// ### **32. Photo Contest Entries**
+// ### **32. Photo Contest Entries** List unique themes.
 
-// Photographers submit sets:
-
-// ```
-// ["sunset", "bird"]
-// ["river"]
-// ["sunset"]
-// ```
-// List unique themes.
 const themes = [["sunset", "bird"], ["river"], ["sunset"]];
 console.log("Problems 32", findUniqueElement(themes));
+
 // ### **33. Electricity Reading Validation**
 // Readings:
 // ```
@@ -164,6 +157,11 @@ console.log("Problems 32", findUniqueElement(themes));
 // [109]
 // ```
 // Check if all readings are below 120.
+
+const readings = [[110, 115], [118], [109]];
+const isAllBellow120 = inputArray => inputArray.flat().every(x => x < 120);
+console.log("Problem 33", isAllBellow120(readings));
+
 
 // ### **34. Jogging Lap Count**
 // Laps:
