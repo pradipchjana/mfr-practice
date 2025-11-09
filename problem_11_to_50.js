@@ -102,28 +102,17 @@ const recorderOrders = [["vanilla", "chocolate"], ["strawberry"], ["chocolate"]]
 const chocolateOcurances = (inputArray, item) => countOccurrences(inputArray.flat(), item);
 console.log(chocolateOcurances(recorderOrders, "chocolate"));
 
-// ### **25. Flowers in Bouquets**
+// ### **25. Flowers in Bouquets** List all unique flowers used.
 
-// Bouquets contain:
+const bouquets = [["rose", "lily"],["lily", "tulip"]];
+const listUniqueFlowers = inputArray => findUniqueElement(inputArray);
+console.log("Problem 25", listUniqueFlowers(bouquets));
 
-// ```
-// ["rose", "lily"]
-// ["lily", "tulip"]
-// ```
+// ### **26. Morning Exercise Count Total repetitions done.
 
-// List all unique flowers used.
-
-// ### **26. Morning Exercise Count**
-
-// Repetitions:
-
-// ```
-// [10, 20]
-// [5]
-// [15, 10]
-// ```
-
-// Total repetitions done.
+const repetitions = [[10,20], [5], [15, 10]];
+const totalRepetitions = inputArray => totalSum(inputArray);
+console.log("Problem 26", totalRepetitions(repetitions));
 
 // ### **27. Train Station Announcements**
 
