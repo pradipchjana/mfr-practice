@@ -25,11 +25,7 @@ const totalCrateWeights = (inputArray) => {
 
 console.log(totalCrateWeights([[4, 6], [2, 3, 1], [5]]));
 
-// ### **14. Post Office Parcel Record**
-// ["small", "large", "medium", "small"]
-// ```
-
-// Find unique parcel sizes.
+// ### **14. Post Office Parcel Record** Find unique parcel sizes.
 
 const findUniqueParcelSize = (array) => {
     return array.filter((element, index) => array.indexOf(element) === index);
