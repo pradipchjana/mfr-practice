@@ -5,7 +5,14 @@ const findListOfDistinctIngredients = (inputArray) => {
     return flatArray.filter((value, index) => flatArray.indexOf(value) === index);
 }
 
-console.log(findListOfDistinctIngredients([["rice", "lentils"], ["rice"], ["curd", "lentils"]]));
+console.log(
+    "findListOfDistinctIngredients",
+    findListOfDistinctIngredients(
+        [["rice", "lentils"], 
+        ["rice"], 
+        ["curd", "lentils"]]
+    )
+);
 
 // 12 Singers produce sequences: Check whether any group sang `"so"`.
 
@@ -13,8 +20,8 @@ const hasAnyThisChoirs = (inputArray, choirName) => {
     return inputArray.some((choir) => choir.includes(choirName));
 }
 
-console.log(hasAnyThisChoirs([["mi", "fa", "la"], ["do", "mi"], ["fa"]], "so"));
-console.log(hasAnyThisChoirs([["la", "la"], ["so", "mi"], ["so", "mi", "la"]], "so"));
+console.log("problem 12", hasAnyThisChoirs([["mi", "fa", "la"], ["do", "mi"], ["fa"]], "so"));
+console.log("problem 12", hasAnyThisChoirs([["la", "la"], ["so", "mi"], ["so", "mi", "la"]], "so"));
 
 // ### **13. Vegetable Crate Totals** Find the sum of all weights.
 
@@ -42,6 +49,12 @@ console.log(findUniqueParcelSize(["small", "large", "medium", "small"]));
 // ```
 
 // Count how many times “deer” was seen.
+
+const countDear = (inputArray) => 
+  inputArray.reduce((count, value) => (value === "deer" ? count + 1 : count), 0);
+
+console.log(countDear(["deer", "deer", "rabbit", "deer"]));
+
 
 // ### **16. Study Group Completion**
 
