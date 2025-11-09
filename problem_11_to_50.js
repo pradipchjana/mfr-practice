@@ -120,30 +120,17 @@ const announcedStations = [["A", "B"], ["B", "C"], ["A"]];
 const findUniqueStations = inputArray => findUniqueElement(inputArray);
 console.log("Problem 27", findUniqueStations(announcedStations));
 
-// ### **28. Book Club Pages Read**
+// ### **28. Book Club Pages Read** Find total pages read.
 
-// Groups read pages:
+const readPages = [[12, 10], [5], [8, 7]];
+const findTotalPagesRead = inputArray => totalSum(inputArray);
+console.log("Problem 28", findTotalPagesRead(readPages));
 
-// ```
-// [12, 10]
-// [5]
-// [8, 7]
-// ```
+// ### **29. Rainfall Data Check** Check if all values are positive.
 
-// Find total pages read.
-
-
-// ### **29. Rainfall Data Check**
-
-// Measurements:
-
-// ```
-// [3, 4]
-// [5, 2]
-// [1]
-// ```
-
-// Check if all values are positive.
+const measurements = [[3, 4], [5, 2], [1]];
+const isAllPositive = inputArray => inputArray.flat().every(x => x > 0);
+console.log("Problem 29", isAllPositive(measurements));
 
 // ### **30. Fruit Stand Weight Totals**
 
@@ -156,6 +143,11 @@ console.log("Problem 27", findUniqueStations(announcedStations));
 // ```
 
 // Compute total weight.
+
+const weights =[[4,3],[2],[3,1]];
+const totalweight = inputArray => totalSum(inputArray);
+console.log("Problem 30", totalweight(weights));
+
 
 // ### **31. School Snack List**
 
