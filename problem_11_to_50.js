@@ -103,18 +103,17 @@ console.log("Problem 18", totalSum([[1, 2, 1], [3], [2]]));
 
 console.log("Problem 19", totalSum([[3, 2], [1], [4]]));
 
-
 // ### **20. Fruit Basket Inventory**
-
 // Mixed fruits recorded:
-
 // ```
 // ["apple", "banana"]
 // ["apple"]
 // ["apple", "orange"]
 // ```
-
 // List unique fruits used.
+
+console.log("Problem 20", findUniqueElement([["apple", "banana"], ["apple"], ["apple", "orange"]]));
+
 
 // ### **21. Classroom Pen Distribution**
 
