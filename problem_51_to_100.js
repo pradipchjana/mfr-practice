@@ -49,3 +49,22 @@
 // 99. Check if any student skipped all activity sessions.
 // 100. Create a list of distinct songs hummed by children on a bus ride.
 
+const findUniqueElements = (inputArray) => {
+    const flatArray = inputArray.flat();
+    return flatArray.filter((value, index) => flatArray.indexOf(value) === index);
+};
+
+const containsInAny = (inputArray, value) =>
+    inputArray.some(arr => arr.includes(value));
+
+const totalSum = (inputArray) =>
+    inputArray.flat().reduce((total, value) => total + value, 0);
+
+const countOccurrences = (array, item) =>
+    array.reduce((count, value) => (value === item ? count + 1 : count), 0);
+
+const main = function () {
+    console.log("Problem 51", countOccurrences(
+        ["banana", "apple", "banana", "grape", "banana"], "banana"
+    ));
+}
