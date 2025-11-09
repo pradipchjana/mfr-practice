@@ -1,15 +1,27 @@
+const findUniqueElement = (inputArray) => {
+    const flatArray = inputArray.flat();
+    return flatArray.filter((value, index) => flatArray.indexOf(value) === index);
+}
+
+const containsInAny = (inputArray, value) => {
+    return inputArray.some(arr => arr.includes(value));
+}
+
+const totalSum = (inputArray) => {
+    return inputArray.flat().reduce((total, value) => total + value, 0);
+}
+
 // 11. Produce a list of distinct ingredients.
 
 const findListOfDistinctIngredients = (inputArray) => {
-    const flatArray = inputArray.flat();
-    return flatArray.filter((value, index) => flatArray.indexOf(value) === index);
+    return findUniqueElement(inputArray);
 }
 
 console.log(
     "findListOfDistinctIngredients",
     findListOfDistinctIngredients(
-        [["rice", "lentils"], 
-        ["rice"], 
+        [["rice", "lentils"],
+        ["rice"],
         ["curd", "lentils"]]
     )
 );
@@ -17,7 +29,7 @@ console.log(
 // 12 Singers produce sequences: Check whether any group sang `"so"`.
 
 const hasAnyThisChoirs = (inputArray, choirName) => {
-    return inputArray.some((choir) => choir.includes(choirName));
+    return containsInAny(inputArray, choirName);
 }
 
 console.log("problem 12", hasAnyThisChoirs([["mi", "fa", "la"], ["do", "mi"], ["fa"]], "so"));
@@ -25,12 +37,7 @@ console.log("problem 12", hasAnyThisChoirs([["la", "la"], ["so", "mi"], ["so", "
 
 // ### **13. Vegetable Crate Totals** Find the sum of all weights.
 
-const totalCrateWeights = (inputArray) => {
-    const flatArray = inputArray.flat()
-    return flatArray.reduce((total, value) => total + value, 0);
-}
-
-console.log(totalCrateWeights([[4, 6], [2, 3, 1], [5]]));
+console.log("Problem 13",totalSum([[4, 6], [2, 3, 1], [5]]));
 
 // ### **14. Post Office Parcel Record** Find unique parcel sizes.
 
@@ -41,17 +48,10 @@ const findUniqueParcelSize = (array) => {
 console.log(findUniqueParcelSize(["small", "large", "medium", "small"]));
 
 // ### **15. Wildlife Sighting Count**
-
-// Animal sightings:
-
-// ```
-// ["deer", "deer", "rabbit", "deer"]
-// ```
-
 // Count how many times “deer” was seen.
 
-const countDear = (inputArray) => 
-  inputArray.reduce((count, value) => (value === "deer" ? count + 1 : count), 0);
+const countDear = (inputArray) =>
+    inputArray.reduce((count, value) => (value === "deer" ? count + 1 : count), 0);
 
 console.log(countDear(["deer", "deer", "rabbit", "deer"]));
 
@@ -68,6 +68,8 @@ console.log(countDear(["deer", "deer", "rabbit", "deer"]));
 
 // Find all chapters completed by any group.
 
+console.log("Problem 16",findUniqueElement([[1, 2], [3], [2, 4, 1]]));
+
 // ### **17. Dance Class Steps**
 
 // Step sequences:
@@ -78,6 +80,8 @@ console.log(countDear(["deer", "deer", "rabbit", "deer"]));
 // ```
 
 // Check if `"turn"` appears in any sequence.
+
+console.log("Problem 17", containsInAny([["step", "tap"],["turn", "step"]], "turn"));
 
 // ### **18. Garden Watering Amount**
 

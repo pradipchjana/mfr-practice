@@ -12,7 +12,7 @@
 
 const findAttendedStudent = (inputArray) => {
     const flatArray = inputArray.flat();
-    return flatArray.flat().filter((element, index) => flatArray.indexOf(element) === index);
+    return flatArray.filter((element, index) => flatArray.indexOf(element) === index);
 }
 
 console.log(findAttendedStudent([["pradip", "rani", "sayan"], ['pradip', 'rakesh'], ["rani", 'shivaji']]));
