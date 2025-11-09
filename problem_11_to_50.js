@@ -134,13 +134,13 @@ console.log("Problem 29", isAllPositive(measurements));
 
 // ### **30. Fruit Stand Weight Totals** Compute total weight.
 
-const weights =[[4,3],[2],[3,1]];
+const weights = [[4, 3], [2], [3, 1]];
 const totalweight = inputArray => totalSum(inputArray);
 console.log("Problem 30", totalweight(weights));
 
 // ### **31. School Snack List** Unique snacks served.
 
-const snacks = [["idli", "vada"],["vada", "upma"]];
+const snacks = [["idli", "vada"], ["vada", "upma"]];
 const uniqueSnacks = inputArray => findUniqueElement(inputArray);
 console.log("Problem 31", uniqueSnacks(snacks));
 
@@ -154,7 +154,8 @@ console.log("Problem 31", uniqueSnacks(snacks));
 // ["sunset"]
 // ```
 // List unique themes.
-
+const themes = [["sunset", "bird"], ["river"], ["sunset"]];
+console.log("Problems 32", findUniqueElement(themes));
 // ### **33. Electricity Reading Validation**
 // Readings:
 // ```
