@@ -132,33 +132,17 @@ const measurements = [[3, 4], [5, 2], [1]];
 const isAllPositive = inputArray => inputArray.flat().every(x => x > 0);
 console.log("Problem 29", isAllPositive(measurements));
 
-// ### **30. Fruit Stand Weight Totals**
-
-// Weights:
-
-// ```
-// [4, 3]
-// [2]
-// [3, 1]
-// ```
-
-// Compute total weight.
+// ### **30. Fruit Stand Weight Totals** Compute total weight.
 
 const weights =[[4,3],[2],[3,1]];
 const totalweight = inputArray => totalSum(inputArray);
 console.log("Problem 30", totalweight(weights));
 
+// ### **31. School Snack List** Unique snacks served.
 
-// ### **31. School Snack List**
-
-// Snacks:
-
-// ```
-// ["idli", "vada"]
-// ["vada", "upma"]
-// ```
-
-// Unique snacks served.
+const snacks = [["idli", "vada"],["vada", "upma"]];
+const uniqueSnacks = inputArray => findUniqueElement(inputArray);
+console.log("Problem 31", uniqueSnacks(snacks));
 
 // ### **32. Photo Contest Entries**
 
