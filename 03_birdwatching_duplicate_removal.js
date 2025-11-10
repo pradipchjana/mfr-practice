@@ -9,7 +9,7 @@
 // Create a list of the species without repeats, preserving the order first seen.
 
 const removeDuplicate = (array) => {
-    return array.filter((element, index) => array.indexOf(element) === index);
+  return array.filter((element, index) => array.indexOf(element) === index);
 }
 
 console.log(removeDuplicate(["sparrow", "crow", "sparrow", "eagle", "crow"]))

@@ -11,10 +11,10 @@
 // Find the total number of candies added.
 
 const countCandies = (inputArray) => {
-    const flatArray = inputArray.flat();
-    return flatArray.reduce((value, result) => {return result + value; }, 0);
+  const flatArray = inputArray.flat();
+  return flatArray.reduce((value, result) => { return result + value; }, 0);
 }
 
 console.log(countCandies([[4], [5, 6, 2, 1], [3, 2]]));
-console.log(countCandies([[0], [1, 3, 4] ,[9], [3, 4]]));
+console.log(countCandies([[0], [1, 3, 4], [9], [3, 4]]));
 
