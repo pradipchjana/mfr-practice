@@ -11,7 +11,7 @@
 // Find unique colors used.
 
 const findUniqueColor = (inputArray) => {
-  const flatArray = inputArray.flat();
+  const flatArray = inputArray.flatMap(x => x);
   return flatArray.filter((color, index) => flatArray.indexOf(color) === index);
 }
 

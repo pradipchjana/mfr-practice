@@ -11,7 +11,7 @@
 // Combine everyone’s observations into one list of all constellations spotted.
 
 const combineObservations = x => {
-  return x.flat();
+  return x.flatMap(x => x);
 }
 
 console.log(combineObservations([["n", "Leo"],

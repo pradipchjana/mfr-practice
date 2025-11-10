@@ -1,5 +1,5 @@
 const findUniqueElements = (inputArray) => {
-  const flatArray = inputArray.flat();
+  const flatArray = inputArray.flatMap(x => x);
   return flatArray.filter((value, index) => flatArray.indexOf(value) === index);
 };
 
@@ -7,18 +7,18 @@ const containsInAny = (inputArray, value) =>
   inputArray.some(arr => arr.includes(value));
 
 const totalSum = (inputArray) =>
-  inputArray.flat().reduce((total, value) => total + value, 0);
+  inputArray.flatMap(x => x).reduce((total, value) => total + value, 0);
 
 const countOccurrences = (array, item) =>
   array.reduce((count, value) => (value === item ? count + 1 : count), 0);
 
-const isAllPosivite = inputArray => inputArray.flat().every(x => x > 0);
+const isAllPosivite = inputArray => inputArray.flatMap(x => x).every(x => x > 0);
 
-const isAllBellow120 = inputArray => inputArray.flat().every(x => x < 120);
+const isAllBellow120 = inputArray => inputArray.flatMap(x => x).every(x => x < 120);
 
-const isAnyAbove7 = inputArray => inputArray.flat().some(x => x > 7);
+const isAnyAbove7 = inputArray => inputArray.flatMap(x => x).some(x => x > 7);
 
-const isAnyEqualTo4 = inputArray => inputArray.flat().some(x => x === 4);
+const isAnyEqualTo4 = inputArray => inputArray.flatMap(x => x).some(x => x === 4);
 
 const main = function () {
 
@@ -94,7 +94,7 @@ const main = function () {
   ]));
 
   console.log("Problem 24", countOccurrences(
-    [["vanilla", "chocolate"], ["strawberry"], ["chocolate"]].flat(),
+    [["vanilla", "chocolate"], ["strawberry"], ["chocolate"]].flatMap(x => x),
     "chocolate"
   ));
 

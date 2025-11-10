@@ -11,7 +11,7 @@
 // Check if **every** recorded temperature is below 32.
 
 const hasAllBellow32Temperature = (inputArray) => {
-  const flatArray = inputArray.flat();
+  const flatArray = inputArray.flatMap(x => x);
   return flatArray.every((temperature) => temperature < 32);
 }
 

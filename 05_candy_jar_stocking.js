@@ -11,7 +11,7 @@
 // Find the total number of candies added.
 
 const countCandies = (inputArray) => {
-  const flatArray = inputArray.flat();
+  const flatArray = inputArray.flatMap(x => x);
   return flatArray.reduce((value, result) => { return result + value; }, 0);
 }
 

@@ -11,7 +11,7 @@
 // Determine which distinct students attended at least once.
 
 const findAttendedStudent = (inputArray) => {
-  const flatArray = inputArray.flat();
+  const flatArray = inputArray.flatMap(x => x);
   return flatArray.filter((element, index) => flatArray.indexOf(element) === index);
 }
 

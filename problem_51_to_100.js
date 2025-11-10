@@ -50,7 +50,7 @@
 // 100. Create a list of distinct songs hummed by children on a bus ride.
 
 const findUniqueElements = (inputArray) => {
-    const flatArray = inputArray.flat();
+    const flatArray = inputArray.flatMap(x => x);
     return flatArray.filter((value, index) => flatArray.indexOf(value) === index);
 };
 
@@ -58,14 +58,14 @@ const containsInAny = (inputArray, value) =>
     inputArray.some(arr => arr.includes(value));
 
 const totalSum = (inputArray) =>
-    inputArray.flat().reduce((total, value) => total + value, 0);
+    inputArray.flatMap(x => x).reduce((total, value) => total + value, 0);
 
 const countOccurrences = (array, item) =>
     array.reduce((count, value) => (value === item ? count + 1 : count), 0);
 
-const combineAllWords = array => array.flat();
+const combineAllWords = array => array.flatMap(x => x);
 
-const isAllBellow50 = array => array.flat().every(x => x < 50);
+const isAllBellow50 = array => array.flatMap(x => x).every(x => x < 50);
 
 const main = function () {
     console.log("Problem 51", countOccurrences(

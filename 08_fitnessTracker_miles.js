@@ -11,7 +11,7 @@
 // Find the total miles run.
 
 const findTotalMile = (inputArray) => {
-  const flatArray = inputArray.flat();
+  const flatArray = inputArray.flatMap(x => x);
   return flatArray.reduce((mile, result) => result + mile, 0);
 }
 
