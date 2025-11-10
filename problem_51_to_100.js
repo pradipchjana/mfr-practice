@@ -63,8 +63,31 @@ const totalSum = (inputArray) =>
 const countOccurrences = (array, item) =>
     array.reduce((count, value) => (value === item ? count + 1 : count), 0);
 
+const combineAllWords = array => array.flat();
+
+const isAllBellow50 = array => array.flat().every(x => x < 50);
+
 const main = function () {
     console.log("Problem 51", countOccurrences(
         ["banana", "apple", "banana", "grape", "banana"], "banana"
     ));
+
+    console.log("Problem 52", combineAllWords([
+        ["I", "am", "good"], ["boy"], ["and", "handsome"]
+    ]));
+
+    console.log("Problem 53", containsInAny([
+        ["good", 'yooo'], ["excellent"]
+    ], "excellent"));
+
+    console.log("Problem 54", isAllBellow50([
+        [45, 39], [40], [38]
+    ]));
+
+    console.log("Problem 55", findUniqueElements([
+        ['Commando', 'Die Hard'], ["Commando", "Toy Story"], ["Die Hard"]
+    ]));
+
 }
+
+main();
